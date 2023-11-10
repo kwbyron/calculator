@@ -35,7 +35,7 @@ h1 {
 
 .main {
   font-family: "League Spartan", sans-serif;
-  width: 550px;
+  width: 525px;
   height: 750px;
   display: grid;
   grid-template-rows: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 5fr);
@@ -52,7 +52,10 @@ h1 {
 
 .header p {
   font-size: 2rem;
-  padding: 1rem;
+  padding: 0;
+  margin: 0;
+  align-self: end;
+  height: 2rem;
 }
 
 .toggle {
@@ -61,9 +64,55 @@ h1 {
   gap: 1rem;
   align-items: end;
 }
+
 .toggle p {
   font-size: 0.8rem;
+  margin: 0;
+  padding: 0;
+  height: 1.2rem;
 }
+
+.toggle-selector p {
+  margin-left: 0.3rem;
+  padding: 0.2rem;
+  letter-spacing: 0.4rem;
+}
+
+.slider {
+  background-color: hsl(223, 31%, 20%);
+  width: 4rem;
+  height: 1.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1fr);
+  margin: 0;
+  border: none;
+  border-radius: 1.5rem;
+  justify-content: center;
+  align-content: center;
+}
+
+#left {
+  margin-left: 0.2rem;
+}
+#center {
+  margin-left: 0.2rem;
+  margin-right: 0.2rem;
+}
+#right {
+  margin-right: 0.2rem;
+}
+
+.active {
+  height: 1.1rem;
+  width: 1.1rem;
+  background-color: hsl(6, 63%, 50%);
+  border-radius: 50%;
+}
+
+.slider:hover {
+  filter: brightness(130%);
+}
+
 .output {
   background-color: hsl(224, 36%, 15%);
   border-radius: 10px;
@@ -96,26 +145,26 @@ h1 {
 }
 
 .number {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   background-color: hsl(30, 25%, 89%);
   color: hsl(221, 14%, 31%);
   box-shadow: 0px 4px hsl(28, 16%, 65%);
 }
 
 .operation {
-  font-size: 2.3rem;
+  font-size: 2.5rem;
   background-color: hsl(30, 25%, 89%);
   color: hsl(221, 14%, 31%);
   box-shadow: 0px 4px hsl(28, 16%, 65%);
 }
 #delete {
-  font-size: 2rem;
+  font-size: 1.8rem;
   background-color: hsl(225, 21%, 49%);
   box-shadow: 0px 4px hsl(224, 28%, 35%);
 }
 
 #reset {
-  font-size: 2rem;
+  font-size: 1.8rem;
   grid-row: 5 / 6;
   grid-column: 1 / 3;
   background-color: hsl(225, 21%, 49%);
@@ -123,7 +172,7 @@ h1 {
 }
 
 #equal {
-  font-size: 2rem;
+  font-size: 1.8rem;
   grid-row: 5 / 6;
   grid-column: 3 / 5;
   background-color: hsl(6, 63%, 50%);

@@ -97,11 +97,40 @@ function Inputs() {
 }
 
 function Toggle() {
+  const [toggleSelection, setToggleSelection] = useState("left");
+
+  function handleSetToggleSelection() {
+    setToggleSelection((toggleSelection) =>
+      toggleSelection === "left"
+        ? "center"
+        : toggleSelection === "center"
+        ? "right"
+        : toggleSelection === "right" && "left"
+    );
+  }
+
   return (
     <div className="toggle">
       <p>THEME</p>
-      <div className="slider">
+      <div className="toggle-selector">
         <p>1 2 3</p>
+        <div className="slider">
+          <div
+            onClick={() => handleSetToggleSelection()}
+            className={`${toggleSelection === "left" ? "active" : ""}`}
+            id="left"
+          ></div>
+          <div
+            onClick={() => handleSetToggleSelection()}
+            className={`${toggleSelection === "center" ? "active" : ""}`}
+            id="center"
+          ></div>
+          <div
+            onClick={() => handleSetToggleSelection()}
+            className={`${toggleSelection === "right" ? "active" : ""}`}
+            id="right"
+          ></div>
+        </div>
       </div>
     </div>
   );
