@@ -280,3 +280,39 @@ body.theme3 {
   box-shadow: 0px 4px hsl(177, 92%, 70%);
   color: hsl(198, 20%, 13%);
 }
+
+@media (max-width: 521px) {
+  #root {
+    max-width: 375px;
+  }
+
+  .main {
+    font-family: "League Spartan", sans-serif;
+    width: 350px;
+    height: 700px;
+    display: grid;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 5fr);
+    gap: 1.8rem;
+  }
+
+  .inputs {
+    grid-gap: 1rem;
+    padding: 1rem;
+  }
+
+  .number {
+    font-size: 2rem;
+  }
+
+  .operation {
+    font-size: 2rem;
+  }
+
+  #delete {
+    font-size: 1.5rem;
+  }
+
+  #reset {
+    font-size: 1.5rem;
+  }
+}
