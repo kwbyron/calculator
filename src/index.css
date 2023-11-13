@@ -297,7 +297,7 @@ body.theme3 {
   .main {
     font-family: "League Spartan", sans-serif;
     width: 350px;
-    height: 700px;
+    height: 650px;
     display: grid;
     grid-template-rows: minmax(0, 1fr) minmax(0, 1.2fr) minmax(0, 5fr);
     gap: 1.8rem;
