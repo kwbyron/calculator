@@ -25,8 +25,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [FrontEnd Mentor](https://www.frontendmentor.io/solutions/responsive-calculator-app-with-react-z1YJAGaHJa)
+- Live Site URL: [Vercel](https://calculator-blond-iota.vercel.app/)
 
 ## My process
 
