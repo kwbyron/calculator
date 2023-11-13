@@ -2,11 +2,7 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: hsl(222, 26%, 31%);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -14,23 +10,27 @@
   -webkit-text-size-adjust: 100%;
 }
 
-#root {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 body {
+  background-color: hsl(222, 26%, 31%);
   margin: 0;
   display: flex;
+  justify-content: center;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }
+body.theme1 {
+  background-color: hsl(222, 26%, 31%);
+}
+body.theme2 {
+  background-color: hsl(0, 0%, 90%);
+}
+body.theme3 {
+  background-color: hsl(268, 75%, 9%);
+}
 
-h1 {
-  color: white;
+#root {
+  max-width: 1440px;
 }
 
 .main {
@@ -43,6 +43,7 @@ h1 {
 }
 
 .header {
+  color: hsl(0, 0%, 100%);
   border-radius: 10px;
   display: flex;
   flex-direction: row;
@@ -56,6 +57,13 @@ h1 {
   margin: 0;
   align-self: end;
   height: 2rem;
+}
+.header.theme2 {
+  color: hsl(60, 10%, 19%);
+}
+
+.header.theme3 {
+  color: hsl(52, 100%, 62%);
 }
 
 .toggle {
@@ -91,6 +99,14 @@ h1 {
   align-content: center;
 }
 
+.slider.theme2 {
+  background-color: hsl(0, 5%, 81%);
+}
+
+.slider.theme3 {
+  background-color: hsl(268, 71%, 12%);
+}
+
 #left {
   margin-left: 0.2rem;
 }
@@ -102,7 +118,7 @@ h1 {
   margin-right: 0.2rem;
 }
 
-.active {
+.active-theme {
   height: 1.1rem;
   width: 1.1rem;
   background-color: hsl(6, 63%, 50%);
@@ -115,12 +131,23 @@ h1 {
 
 .output {
   background-color: hsl(224, 36%, 15%);
+  color: hsl(0, 0%, 100%);
   border-radius: 10px;
   font-size: 3rem;
   display: flex;
   justify-content: end;
   align-items: center;
   padding: 1.5rem;
+}
+
+.output.theme2 {
+  background-color: hsl(0, 0%, 93%);
+  color: hsl(60, 10%, 19%);
+}
+
+.output.theme3 {
+  background-color: hsl(268, 71%, 12%);
+  color: hsl(52, 100%, 62%);
 }
 
 .inputs {
@@ -138,10 +165,26 @@ h1 {
   border-radius: 10px;
 }
 
+.inputs.theme2 {
+  background-color: hsl(0, 5%, 81%);
+}
+
+.inputs.theme3 {
+  background-color: hsl(268, 71%, 12%);
+}
+
 .btn {
   font-family: "League Spartan", sans-serif;
   border: none;
   border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn:active {
+  transform: translateY(4px);
+}
+.btn:hover {
+  filter: brightness(130%);
 }
 
 .number {
@@ -151,16 +194,51 @@ h1 {
   box-shadow: 0px 4px hsl(28, 16%, 65%);
 }
 
+.number.theme2 {
+  background-color: hsl(45, 7%, 89%);
+  color: hsl(60, 10%, 19%);
+  box-shadow: 0px 4px hsl(35, 11%, 61%);
+}
+
+.number.theme3 {
+  background-color: hsl(268, 47%, 21%);
+  color: hsl(52, 100%, 62%);
+  box-shadow: 0px 4px hsl(290, 70%, 36%);
+}
+
 .operation {
   font-size: 2.5rem;
   background-color: hsl(30, 25%, 89%);
   color: hsl(221, 14%, 31%);
   box-shadow: 0px 4px hsl(28, 16%, 65%);
 }
+
+.operation.theme2 {
+  background-color: hsl(45, 7%, 89%);
+  color: hsl(60, 10%, 19%);
+  box-shadow: 0px 4px hsl(35, 11%, 61%);
+}
+
+.operation.theme3 {
+  background-color: hsl(268, 47%, 21%);
+  color: hsl(52, 100%, 62%);
+  box-shadow: 0px 4px hsl(290, 70%, 36%);
+}
+
 #delete {
   font-size: 1.8rem;
   background-color: hsl(225, 21%, 49%);
   box-shadow: 0px 4px hsl(224, 28%, 35%);
+}
+
+#delete.theme2 {
+  background-color: hsl(185, 42%, 37%);
+  box-shadow: 0px 4px hsl(185, 58%, 25%);
+}
+
+#delete.theme3 {
+  background-color: hsl(281, 89%, 26%);
+  box-shadow: 0px 4px hsl(285, 91%, 52%);
 }
 
 #reset {
@@ -171,10 +249,31 @@ h1 {
   box-shadow: 0px 4px hsl(224, 28%, 35%);
 }
 
+#reset.theme2 {
+  background-color: hsl(185, 42%, 37%);
+  box-shadow: 0px 4px hsl(185, 58%, 25%);
+}
+
+#reset.theme3 {
+  background-color: hsl(281, 89%, 26%);
+  box-shadow: 0px 4px hsl(285, 91%, 52%);
+}
+
 #equal {
   font-size: 1.8rem;
   grid-row: 5 / 6;
   grid-column: 3 / 5;
   background-color: hsl(6, 63%, 50%);
   box-shadow: 0px 4px hsl(6, 70%, 34%);
+}
+
+#equal.theme2 {
+  background-color: hsl(25, 98%, 40%);
+  box-shadow: 0px 4px hsl(25, 99%, 27%);
+}
+
+#equal.theme3 {
+  background-color: hsl(176, 100%, 44%);
+  box-shadow: 0px 4px hsl(177, 92%, 70%);
+  color: hsl(198, 20%, 13%);
 }
